@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+<style>
+body {
+  font-family: 'Coiny', cursive;
+  margin: 0 auto;
+  max-width: 600px;
+  background: brown;
+  text-align: center;
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Coiny', cursive;
+  text-align: center;
+  font-size: 65px;
+  color: grey;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: white;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(200,125,20,100);
+  background: white;
+  background: linear-gradient(bottom, rgba(80,30,0,1), rgba(80,30,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(80,30,0,1), rgba(80,30,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(80,30,0,1), rgba(80,30,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+.price {
+  float: right;
+}
+  ul {
+      padding: 10px;
+      background: rgba(50,35,0,0.5);
+    }
+ li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+@media (max-width: 500px) {
+  h1 {
+    font-size: 100px;
+    margin-top: 20px;
+    line-height: 40px;
+  
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+   
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 25px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 20px;
+  }
+ 
+}
+
+</style>
+
+</head>
+
+<body>
+
+<ul>
+      <li><button onclick=IceCream()>IceCream</button></li>
+      <li><button onclick=Shakes()>Shakes</button></li>
+      <li><button onclick=Desserts()>Desserts</button></li>
+    </ul>
+<h1>All the Nutella</h1>
+<h2>full of yummy delicious treats</h2>
+<div id="treats"></div>
+
+<script>
+ IceCreamImages = [
+        'url("https://homecookingadventure.com/images/recipes/nutella_icecream_mainimage.jpg")',
+        'url("https://houseofnasheats.com/wp-content/uploads/2018/07/Nutella-Swirl-Ice-Cream-5.jpg")',
+        'url("https://truffle-assets.imgix.net/pxqrocxwsjcc_MpQeDjRbsyYqioaU0EWoW_the-scran-line_s5e4_double-choc-hazelnut-ice-cream_squareThumbnail_en-US.jpeg")'
+ ]
+ShakesImages = [
+        'url("https://nadialim.com/wp-content/uploads/2017/05/nutellaShakes-555x463.jpg")',
+        'url("https://thestayathomechef.com/wp-content/uploads/2013/07/Chocolate-Peanut-Butter-Swirl-Milkshakes-1.jpg")',
+        'url("https://www.handletheheat.com/wp-content/uploads/2016/04/Nutella-Chocolate-Covered-Pretzel-Milkshakes-03.jpg")'
+ ]
+ DessertsImages = [
+        'url("https://hips.hearstapps.com/clv.h-cdn.co/assets/15/16/nutella-stuffed-blondie-bars-recipe.jpg")',
+        'url("https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/image/recipes/ay/11/02/nutella-pudding-cakes-ay-x.jpg?itok=BS4n0gwE")',
+        'url("https://hips.hearstapps.com/del.h-cdn.co/assets/15/23/nutella-macarons-4-450x522.jpg")'
+ ]
+
+
+function IceCream() {
+ idk = document.getElementById("treats")
+ idk.innerHTML = ''
+ idk.innerHTML += IceCreamDivs[0]
+ idk.innerHTML += IceCreamDivs[1]
+ idk.innerHTML += IceCreamDivs[2]
+  //alert("You picked the first option")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = IceCreamImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = IceCreamImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = IceCreamImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+}
+function Shakes() {
+ idk = document.getElementById("treats")
+ idk.innerHTML = ''
+ idk.innerHTML += ShakesDivs[0]
+ idk.innerHTML += ShakesDivs[1]
+ idk.innerHTML += ShakesDivs[2]
+  //alert("You picked the first option")
+   items = document.getElementsByClassName("item")
+    items[0].style.background = ShakesImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = ShakesImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = ShakesImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+}
+function Desserts() {
+ idk = document.getElementById("treats")
+ idk.innerHTML = ''
+ idk.innerHTML += DessertsDivs[0]
+ idk.innerHTML += DessertsDivs[1]
+ idk.innerHTML += DessertsDivs[2]
+  //alert("You picked the first option")
+   items = document.getElementsByClassName("item")
+    items[0].style.background = DessertsImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = DessertsImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = DessertsImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+}
+
+IceCreamDivs = [
+  '<div class="item"><p>Chocolate nutella icecream  <span class="price">$5</span><br /><small>nutella mixed with chocolate ice cream and Oreos to get a yummy flavor. Chocolate sprinkles are optional on top of the icecream.</small></p></div>',
+  '<div class="item"><p>Vanilla nutella icecream <span class="price">$7</span><br /><small>nutella mixed with vanilla icecream, Oreos, and chocolate chips. Hershey drizzle included on top and sprinkes of any choice</small></p></div>',
+  '<div class="item"><p>Coco and nuts for nutella<span class="price">$10</span><br /><small>nutella mixed with choclate and hershey choclate filling. Around the cone includes chopped nuts and chocolate drizzle.</small></p></div>',
+]
+
+ShakesDivs = [
+  '<div class="item"><p>nutella party<span class="price">$15</span><br /><small>nutella mixed with vanilla icecream and Hershey syrup.Topped with carmel popcorn to get an extra sweet taste. </small></p></div>',
+  '<div class="item"><p>Resess Nutella Pieces<span class="price">$15</span><br /><small>nutella mixed with vanilla icecream, carmel, and Hershey syrup. Crushed Resses Pieces around the cup and also on top</small></p></div>',
+  '<div class="item"><p>Just pretzelin shake<span class="price">$13</span><br /><small>regular nutella mixed chocolate covered pretzels to get a sweet and salty effect. Topped with whip cream and Hershey syrup.</small></p></div>',
+]
+
+DessertsDivs = [
+  '<div class="item"><p>nutella brownie<span class="price">$17</span><br /><small>melting nutella filled chocolate brownies.Very warm and soft. Topped with additonal more warm nutella </small></p></div>',
+  '<div class="item"><p>nutella in a mug <span class="price">$20</span><br /><small>Nutella pound cake all in a mug to get a right portion size for you.Topped with whip cream and vanilla icecream</small></p></div>',
+  '<div class="item"><p>no-maccing around<span class="price">$9</span><br /><small>10 nutella filled, chocolate maccarons. Every additional is $2 each</small></p></div>',
+]
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');     
+  });
+</script>
+
+</body>
+
