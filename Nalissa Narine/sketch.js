@@ -27,9 +27,10 @@ let direction_s
 let direction_m
 let score
 let level
-let time = 100
+let time = 10
 let cat = document.getElementById("cat")
 let scoreboard = {  }
+
 function setup() {
   createCanvas(windowWidth, windowHeight)
   x = 125
@@ -59,16 +60,16 @@ function draw() {
   circle(k,j,54)
   
    if (keyIsDown(LEFT_ARROW)) {
-    x = x - 5
+    x = x - 8
   }
   if (keyIsDown(RIGHT_ARROW)) {
-    x = x + 5
+    x = x + 8
   }
    if (keyIsDown(UP_ARROW)) {
-    y = y - 5
+    y = y - 8
   }
    if (keyIsDown(DOWN_ARROW)) {
-    y = y + 5
+    y = y + 8
   }
   fill(128,255,321)
   circle(a,b,32)
@@ -149,19 +150,20 @@ noLoop()
   
 }
 function restart() { 
-        let cat = document.getElementById("cat")
-		name = cat.value 
+        let dog = document.getElementById("dog")
+		name = dog.value 
 		if (name != "") { 
 			scoreboard[name] = score
 			database.ref(name).set(score)
 		}
 alert("Scoreboard:"+JSON.stringify(scoreboard,null,1)) 
-		time = 100
+		time = 10
 		score = 0
 		loop()
 		cat.innerHTML = ""
 		generate_leaderboard()
 }
+
 function generate_leaderboard() {
   scores = Object.values(scoreboard)
   names = Object.keys(scoreboard)
@@ -178,6 +180,7 @@ function generate_leaderboard() {
     alert("Leaderboard: " + JSON.stringify(leaderboard,null,1))
   }
 }
+
 function generate_alltime_leaderboard() {
 	let alltime_leaderboard = { }
 	database.ref().orderByValue().limitToLast(3).on("value", function(snapshot) {
