@@ -53,11 +53,13 @@ function setup() {
 function draw() {
   if (time > 0) {
 
+
   background(190);
   fill(210,192,203)
   circle(x,y,34)
   circle(a,b,44)
   circle(k,j,54)
+	  if (touches.length == 0) {
   
    if (keyIsDown(LEFT_ARROW)) {
     x = x - 8
@@ -71,6 +73,11 @@ function draw() {
    if (keyIsDown(DOWN_ARROW)) {
     y = y + 8
   }
+else { 
+		__ = touches[0].x
+		__ = touches[0].y
+}
+
   fill(128,255,321)
   circle(a,b,32)
   a = a + 10 *direction_s
