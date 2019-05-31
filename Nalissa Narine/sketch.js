@@ -77,7 +77,7 @@ else {
 	x = touches[0].x
 	y = touches[0].y
 }
-}
+
 
   fill(128,255,321)
   circle(a,b,32)
