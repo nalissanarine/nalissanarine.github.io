@@ -73,6 +73,7 @@ function draw() {
    if (keyIsDown(DOWN_ARROW)) {
     y = y + 8
   }
+}
 else { 
 	x = touches[0].x
 	y = touches[0].y
