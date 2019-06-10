@@ -27,7 +27,7 @@ let direction_s
 let direction_m
 let score
 let level
-let time = 10
+let time = 100
 let cat = document.getElementById("cat")
 let scoreboard = {  }
 
